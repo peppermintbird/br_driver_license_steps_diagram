@@ -1,0 +1,78 @@
+graph TD
+
+subgraph Age_Check
+  A[Is the person at least 18 years old?]
+  B[If yes, proceed to the next step.]
+  C[If no, you must be at least 18 years old to apply for a driver's license.]
+  A -->|Yes| B
+  A -->|No| C
+end
+
+subgraph Criminal_Responsibility_Check
+  D[Is the person criminally responsible for themselves?]
+  E[If yes, proceed to the next step.]
+  F[If no, you must be criminally responsible for yourself to apply for a driver's license.]
+  D -->|Yes| E
+  D -->|No| F
+end
+
+subgraph Medical_Check
+  G[Ensure the person is medically fit to drive.]
+  H[If yes, proceed to the next step.]
+  I[If no, You must be medically fit to apply for a driver's license.]
+  G -->|Yes| H
+  G -->|No| I
+end
+
+subgraph Enroll_in_Driving_School
+  J[Enroll in a recognized driving school.]
+  K[If enrolled, proceed to the next step.]
+  L[If not enrolled, you need to enroll in a driving school to apply for a driver's license.]
+  J -->|Enrolled| K
+  J -->|Not Enrolled| L
+end
+
+subgraph Theory_Exam
+  M[Take and pass the theory exam.]
+  N[If passed, proceed to the next step.]
+  O[If failed, you need to pass the theory exam to move forward.]
+  M -->|Passed| N
+  M -->|Failed| O
+end
+
+subgraph Practical_Lessons
+  P[Complete the required number of practical driving lessons.]
+  Q[If completed, proceed to the next step.]
+  R[If not completed, complete the required practical driving lessons.]
+  P -->|Completed| Q
+  P -->|Not Completed| R
+end
+
+subgraph Practical_Exam
+  S[Take and pass the practical driving exam.]
+  T[If passed, proceed to the next step.]
+  U[If failed, you need to pass the practical driving exam to obtain your driver's license.]
+  S -->|Passed| T
+  S -->|Failed| U
+end
+
+subgraph Probatory_Period
+  V[Serve the probatory period without committing any traffic offenses.]
+  W[If completed without issues, congrats! You're now a driver.]
+  X[If any offenses are committed, return to Age Check.]
+  V -->|Completed without issues| W
+  V -->|Offenses Committed| X
+end
+
+B --> D
+E --> G
+H --> J
+K --> M
+N --> P
+Q --> S
+T --> V
+U --> X --> A
+R --> J
+O --> M
+
+  
